@@ -68,6 +68,21 @@ export class FeedGenerator {
     await events.once(this.server, 'listening')
     return this.server
   }
+
+  async close() {
+    // Close the firehose subscription
+    if (this.firehose?.sub) {
+      await this.firehose.sub.close()
+    }
+    
+    // Close the server if it exists
+    if (this.server) {
+      await new Promise((resolve) => this.server?.close(resolve))
+    }
+    
+    // Close database connection
+    await this.db.destroy()
+  }
 }
 
 export default FeedGenerator
