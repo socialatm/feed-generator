@@ -5,6 +5,12 @@ import {
 import { FirehoseSubscriptionBase, getOpsByType } from './util/subscription'
 
 export class FirehoseSubscription extends FirehoseSubscriptionBase {
+  private postCreateCount: number = 0
+
+  getPostCreateCount(): number {
+    return this.postCreateCount
+  }
+
   async handleEvent(evt: RepoEvent) {
     if (!isCommit(evt)) return
 
@@ -14,7 +20,7 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
     // Just for fun :)
     // Delete before actually using
     for (const post of ops.posts.creates) {
-      console.log(post.record.text)
+    //  console.log(post.record.text)
     }
 
     const postsToDelete = ops.posts.deletes.map((del) => del.uri)
@@ -44,6 +50,10 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
         .values(postsToCreate)
         .onConflict((oc) => oc.doNothing())
         .execute()
+
+        // Increment counter by number of successfully created posts
+        this.postCreateCount += postsToCreate.length
+        console.log(`Total posts created: ${this.postCreateCount}`)
     }
   }
 }
