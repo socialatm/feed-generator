@@ -69,6 +69,7 @@ export class FeedGenerator {
     return this.server
   }
 
+  /*
   async close() {
     // Close the firehose subscription
     if (this.firehose?.sub) {
@@ -83,6 +84,7 @@ export class FeedGenerator {
     // Close database connection
     await this.db.destroy()
   }
+  */
 }
 
 export default FeedGenerator

@@ -54,6 +54,13 @@ export class FirehoseSubscription extends FirehoseSubscriptionBase {
         // Increment counter by number of successfully created posts
         this.postCreateCount += postsToCreate.length
         console.log(`Total posts created: ${this.postCreateCount}`)
+
+        if (this.postCreateCount >= 5) {
+          console.log('Reached 10 posts, exiting...')
+          this.postCreateCount = 0
+          console.log('Exiting...')
+          process.exit(0)
+        }
     }
   }
 }
