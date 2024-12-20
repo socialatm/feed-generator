@@ -121,3 +121,4 @@ dist
 .idea/
 *.iml
 .db.sqlite
+.db.sqlite-journal
