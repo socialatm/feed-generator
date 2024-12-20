@@ -133,3 +133,4 @@ dist
 .idea/
 *.iml
 .db.sqlite
+.db.sqlite
