@@ -47,7 +47,10 @@ The service must be set up to respond to HTTPS queries over port 443.
 
 ### Publishing your feed
 
-To publish your feed, go to the script at `scripts/publishFeedGen.ts` and fill in the variables at the top. Examples are included, and some are optional. To publish your feed generator, simply run `npm run publishFeed`.
+To publish your feed, go to the script at `scripts/publishFeedGen.ts` and fill in the variables at the top. Examples are included, and some are optional. To publish your feed generator, simply run 
+```
+npm run publishFeed
+```
 
 To update your feed's display data (name, avatar, description, etc.), just update the relevant variables and re-run the script.
 
