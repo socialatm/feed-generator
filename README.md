@@ -41,7 +41,7 @@ Next, you will need to do two things:
 We've taken care of setting this server up with a did:web. However, you're free to switch this out for did:plc if you like - you may want to if you expect this Feed Generator to be long-standing and possibly migrating domains.
 
 ### Deploying your feed
-Your feed will need to be accessible at the value supplied to the `FEEDGEN_HOSTNAME` environment variable.
+Your feed will need to be accessible at the value supplied to the `HOSTNAME` environment variable.
 
 The service must be set up to respond to HTTPS queries over port 443.
 
