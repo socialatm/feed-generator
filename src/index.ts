@@ -18,7 +18,6 @@ const run = async () => {
   console.log(
     `🤖 running feed generator at http://${server.cfg.listenhost}:${server.cfg.port}`,
   )
-//  console.log(JSON.stringify(server.cfg, null, 2))
 }
 
 run()
