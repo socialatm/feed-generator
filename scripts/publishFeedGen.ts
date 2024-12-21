@@ -7,7 +7,7 @@ import { ids } from '../src/lexicon/lexicons'
 const run = async () => {
   dotenv.config()
 
-  if (!process.env.FEEDGEN_SERVICE_DID && !process.env.FEEDGEN_HOSTNAME) {
+  if (!process.env.SERVICE_DID && !process.env.HOSTNAME) {
     throw new Error('Please provide a hostname in the .env file')
   }
 
@@ -60,7 +60,7 @@ const run = async () => {
   const { handle, password, recordName, displayName, description, avatar, service } = answers
 
   const feedGenDid =
-    process.env.FEEDGEN_SERVICE_DID ?? `did:web:${process.env.FEEDGEN_HOSTNAME}`
+    process.env.SERVICE_DID ?? `did:web:${process.env.HOSTNAME}`
 
   // only update this if in a test environment
   const agent = new AtpAgent({ service: service ? service : 'https://bsky.social' })
