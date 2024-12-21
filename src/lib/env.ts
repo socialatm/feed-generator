@@ -14,4 +14,8 @@ export const env = cleanEnv(process.env, {
   DB_PATH: str({ devDefault: ':memory:' }),
   COOKIE_SECRET: str({ devDefault: '00000000000000000000000000000000' }),
   SUBSCRIPTION_RECONNECT_DELAY: num({devDefault: 3000}),
+  SUBSCRIPTION_ENDPOINT: str({ devDefault: 'wss://bsky.network' }),
+  HOSTNAME: str({ devDefault: 'localhost:3000' }),
+  PUBLISHER_DID: str({ devDefault: 'did:example:alice' }),
+  SERVICE_DID: str({ devDefault: 'did:web:localhost:3000' }),
 })
