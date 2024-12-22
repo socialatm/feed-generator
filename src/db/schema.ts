@@ -3,6 +3,7 @@ export type DatabaseSchema = {
   sub_state: SubState
   auth_session: AuthSession
   auth_state: AuthState
+  status: Status
 }
 
 export type Post = {
@@ -27,5 +28,12 @@ export type AuthState = {
 }
 
 type AuthStateJson = string
-
 type AuthSessionJson = string
+
+export type Status = {
+  uri: string
+  authorDid: string
+  status: string
+  createdAt: string
+  indexedAt: string
+}

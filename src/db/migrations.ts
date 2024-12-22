@@ -31,11 +31,20 @@ migrations['001'] = {
       .addColumn('key', 'varchar', (col) => col.primaryKey())
       .addColumn('state', 'varchar', (col) => col.notNull())
       .execute()
+      await db.schema
+      .createTable('status')
+      .addColumn('uri', 'varchar', (col) => col.primaryKey())
+      .addColumn('authorDid', 'varchar', (col) => col.notNull())
+      .addColumn('status', 'varchar', (col) => col.notNull())
+      .addColumn('createdAt', 'varchar', (col) => col.notNull())
+      .addColumn('indexedAt', 'varchar', (col) => col.notNull())
+      .execute()
   },
   async down(db: Kysely<unknown>) {
     await db.schema.dropTable('post').execute()
     await db.schema.dropTable('sub_state').execute()
     await db.schema.dropTable('auth_state').execute()
     await db.schema.dropTable('auth_session').execute()
+    await db.schema.dropTable('status').execute()
   },
 }
