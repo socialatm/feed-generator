@@ -2,6 +2,7 @@ import { Database } from './db'
 import { DidResolver } from '@atproto/identity'
 import type { OAuthClient } from '@atproto/oauth-client-node'
 import { pino } from 'pino'
+import { createBidirectionalResolver, createIdResolver, BidirectionalResolver } from './id-resolver'
 
 export type AppContext = {
   db: Database
@@ -9,6 +10,7 @@ export type AppContext = {
   cfg: Config
   oauthClient: OAuthClient
   logger: pino.Logger
+  resolver: BidirectionalResolver
 }
 
 export type Config = {
