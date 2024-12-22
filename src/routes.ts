@@ -8,12 +8,12 @@ import { Agent } from '@atproto/api'
 import express from 'express'
 import { getIronSession } from 'iron-session'
 import type { AppContext } from '#/index'
-import { home } from '#/pages/home'
-import { login } from '#/pages/login'
-import { env } from '#/lib/env'
-import { page } from '#/lib/view'
+import { home } from './pages/home'
+import { login } from './pages/login'
+import { env } from './lib/env'
+import { page } from './lib/view'
 import * as Status from '#/lexicon/types/xyz/statusphere/status'
-import * as Profile from '#/lexicon/types/app/bsky/actor/profile'
+import * as Profile from './lexicon/types/app/bsky/actor/profile'
 
 type Session = { did: string }
 
