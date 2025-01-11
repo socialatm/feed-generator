@@ -16,7 +16,7 @@
     typed-emitter "^2.1.0"
     zod "^3.21.4"
 
-"@atproto/common-web@^0.2.1", "@atproto/common-web@^0.2.2", "@atproto/common-web@^0.2.3", "@atproto/common-web@^0.2.4":
+"@atproto/common-web@^0.2.2", "@atproto/common-web@^0.2.3", "@atproto/common-web@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@atproto/common-web/-/common-web-0.2.4.tgz#a77e0a7f8f025115b3db4f7c530b934b10ab3d82"
   integrity sha512-6+DOhQcTklFmeiSkZRx6iFeqi4OFtGl4yEDGATk00q4tEcPoPvyOBtYHN6+G9lrfJIfx5RfmggamvXlJv1PxxA==
@@ -30,6 +30,16 @@
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@atproto/common-web/-/common-web-0.3.1.tgz#86f8efb10a4b9073839cee914c6c08a664917cc4"
   integrity sha512-N7wiTnus5vAr+lT//0y8m/FaHHLJ9LpGuEwkwDAeV3LCiPif4m/FS8x/QOYrx1PdZQwKso95RAPzCGWQBH5j6Q==
+  dependencies:
+    graphemer "^1.4.0"
+    multiformats "^9.9.0"
+    uint8arrays "3.0.0"
+    zod "^3.23.8"
+
+"@atproto/common-web@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@atproto/common-web/-/common-web-0.3.2.tgz#4cf78ad4d24fed801882f3d35afc39bceccdff51"
+  integrity sha512-Vx0JtL1/CssJbFAb0UOdvTrkbUautsDfHNOXNTcX2vyPIxH9xOameSqLLunM1hZnOQbJwyjmQCt6TV+bhnanDg==
   dependencies:
     graphemer "^1.4.0"
     multiformats "^9.9.0"
@@ -61,15 +71,6 @@
     multiformats "^9.9.0"
     pino "^8.21.0"
 
-"@atproto/crypto@^0.2.2":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@atproto/crypto/-/crypto-0.2.3.tgz#845400bed48434c2312621f29c63d7701f22f103"
-  integrity sha512-tJeFIOOblvknlhkgIYbnAG3P/KBXwgXQAEPG2LPGmqMD0F65uUGChLfoIJGSLmq9OaR5IQtKgbCTZ9Q6yxzy8A==
-  dependencies:
-    "@noble/curves" "^1.1.0"
-    "@noble/hashes" "^1.3.1"
-    uint8arrays "3.0.0"
-
 "@atproto/crypto@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@atproto/crypto/-/crypto-0.3.0.tgz#a79e05a85129810755f3456e9d419b49824407d7"
@@ -88,15 +89,14 @@
     "@noble/hashes" "^1.3.1"
     uint8arrays "3.0.0"
 
-"@atproto/identity@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@atproto/identity/-/identity-0.2.1.tgz#8203ba53a25c3300d1aec0c28eb10a106919b410"
-  integrity sha512-daLEYCSOrEaXpsoSAZ1G5mlDs3qT9ZHTFIBip14yHUWB0gVb+/KI9lU+DGSo+RGPlzYF+A5Y+Nni4j3IRVVlSA==
+"@atproto/crypto@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@atproto/crypto/-/crypto-0.4.3.tgz#15b8105892baf1ce23327f2d9cb2d1ffd8153d0d"
+  integrity sha512-YSSUAvkx+ldpXw97NXZWfLx/prgh5YJ2K0BCw51JCJmXSRp6KhhwvOm4J+K/s5hwpssyuDCVTXknyS4PHwaK5g==
   dependencies:
-    "@atproto/common-web" "^0.2.1"
-    "@atproto/crypto" "^0.2.2"
-    axios "^0.27.2"
-    zod "^3.21.4"
+    "@noble/curves" "^1.7.0"
+    "@noble/hashes" "^1.6.1"
+    uint8arrays "3.0.0"
 
 "@atproto/identity@^0.3.3":
   version "0.3.3"
@@ -106,6 +106,14 @@
     "@atproto/common-web" "^0.2.4"
     "@atproto/crypto" "^0.3.0"
     axios "^0.27.2"
+
+"@atproto/identity@^0.4.4":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@atproto/identity/-/identity-0.4.5.tgz#d644fb08c9998cf382d700d3ac25620d6eebc4ec"
+  integrity sha512-IyW6wk+qfX+z/LmBdjatJgjSJWDTJLSCT/6yQUD/L0mkOjRdxiG7DoYIChaF3xHOPKiIuOGu/fuzhBMxVVcCcw==
+  dependencies:
+    "@atproto/common-web" "^0.3.2"
+    "@atproto/crypto" "^0.4.3"
 
 "@atproto/lexicon@^0.2.2":
   version "0.2.3"
@@ -422,10 +430,22 @@
   dependencies:
     "@noble/hashes" "1.5.0"
 
+"@noble/curves@^1.7.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@noble/curves/-/curves-1.8.0.tgz#fe035a23959e6aeadf695851b51a87465b5ba8f7"
+  integrity sha512-j84kjAbzEnQHaSIhRPUmB3/eVXu2k3dKPl2LOrR8fSOIL+89U+7lV117EWHtq/GHM3ReGHM46iRBdZfpc4HRUQ==
+  dependencies:
+    "@noble/hashes" "1.7.0"
+
 "@noble/hashes@1.5.0", "@noble/hashes@^1.3.1":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.5.0.tgz#abadc5ca20332db2b1b2aa3e496e9af1213570b0"
   integrity sha512-1j6kQFb7QRru7eKN3ZDvRcP13rugwdxZqCjbiAVZfIJwgj2A65UmT4TgARXGlXgnRkORLTDTrO19ZErt7+QXgA==
+
+"@noble/hashes@1.7.0", "@noble/hashes@^1.6.1":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.7.0.tgz#5d9e33af2c7d04fee35de1519b80c958b2e35e39"
+  integrity sha512-HXydb0DgzTpDPwbVeDGCG1gIu7X6+AuU6Zl6av/E/KG8LMsvPntvq+w17CHRpKBmN6Ybdrt1eP3k4cj8DJa78w==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
